@@ -2,13 +2,13 @@
 
 from __future__ import annotations
 
-from typing import Any, List, Union, Iterable, Optional, cast
+from typing import Any, Union, Iterable, Optional, cast
 from typing_extensions import overload
 
 import httpx
 
 from ..types import completion_create_params
-from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven
+from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven, SequenceNotStr
 from .._utils import is_given, required_args, maybe_transform, strip_not_given, async_maybe_transform
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
@@ -61,10 +61,10 @@ class CompletionsResource(SyncAPIResource):
         min_tokens: Optional[int] | NotGiven = NOT_GIVEN,
         n: Optional[int] | NotGiven = NOT_GIVEN,
         presence_penalty: Optional[float] | NotGiven = NOT_GIVEN,
-        prompt: Union[str, List[str], Iterable[int], Iterable[Iterable[int]]] | NotGiven = NOT_GIVEN,
+        prompt: Union[str, SequenceNotStr[str], Iterable[int], Iterable[Iterable[int]]] | NotGiven = NOT_GIVEN,
         return_raw_tokens: Optional[bool] | NotGiven = NOT_GIVEN,
         seed: Optional[int] | NotGiven = NOT_GIVEN,
-        stop: Union[str, List[str], None] | NotGiven = NOT_GIVEN,
+        stop: Union[str, SequenceNotStr[str], None] | NotGiven = NOT_GIVEN,
         stream: Optional[bool] | NotGiven = NOT_GIVEN,
         stream_options: Optional[StreamOptionsParam] | NotGiven = NOT_GIVEN,
         suffix: Optional[str] | NotGiven = NOT_GIVEN,
@@ -191,10 +191,10 @@ class CompletionsResource(SyncAPIResource):
         min_tokens: Optional[int] | NotGiven = NOT_GIVEN,
         n: Optional[int] | NotGiven = NOT_GIVEN,
         presence_penalty: Optional[float] | NotGiven = NOT_GIVEN,
-        prompt: Union[str, List[str], Iterable[int], Iterable[Iterable[int]]] | NotGiven = NOT_GIVEN,
+        prompt: Union[str, SequenceNotStr[str], Iterable[int], Iterable[Iterable[int]]] | NotGiven = NOT_GIVEN,
         return_raw_tokens: Optional[bool] | NotGiven = NOT_GIVEN,
         seed: Optional[int] | NotGiven = NOT_GIVEN,
-        stop: Union[str, List[str], None] | NotGiven = NOT_GIVEN,
+        stop: Union[str, SequenceNotStr[str], None] | NotGiven = NOT_GIVEN,
         stream: Optional[bool] | NotGiven = NOT_GIVEN,
         stream_options: Optional[StreamOptionsParam] | NotGiven = NOT_GIVEN,
         suffix: Optional[str] | NotGiven = NOT_GIVEN,
@@ -320,10 +320,10 @@ class CompletionsResource(SyncAPIResource):
         min_tokens: Optional[int] | NotGiven = NOT_GIVEN,
         n: Optional[int] | NotGiven = NOT_GIVEN,
         presence_penalty: Optional[float] | NotGiven = NOT_GIVEN,
-        prompt: Union[str, List[str], Iterable[int], Iterable[Iterable[int]]] | NotGiven = NOT_GIVEN,
+        prompt: Union[str, SequenceNotStr[str], Iterable[int], Iterable[Iterable[int]]] | NotGiven = NOT_GIVEN,
         return_raw_tokens: Optional[bool] | NotGiven = NOT_GIVEN,
         seed: Optional[int] | NotGiven = NOT_GIVEN,
-        stop: Union[str, List[str], None] | NotGiven = NOT_GIVEN,
+        stop: Union[str, SequenceNotStr[str], None] | NotGiven = NOT_GIVEN,
         stream: Optional[bool] | NotGiven = NOT_GIVEN,
         stream_options: Optional[StreamOptionsParam] | NotGiven = NOT_GIVEN,
         suffix: Optional[str] | NotGiven = NOT_GIVEN,
@@ -427,10 +427,10 @@ class AsyncCompletionsResource(AsyncAPIResource):
         min_tokens: Optional[int] | NotGiven = NOT_GIVEN,
         n: Optional[int] | NotGiven = NOT_GIVEN,
         presence_penalty: Optional[float] | NotGiven = NOT_GIVEN,
-        prompt: Union[str, List[str], Iterable[int], Iterable[Iterable[int]]] | NotGiven = NOT_GIVEN,
+        prompt: Union[str, SequenceNotStr[str], Iterable[int], Iterable[Iterable[int]]] | NotGiven = NOT_GIVEN,
         return_raw_tokens: Optional[bool] | NotGiven = NOT_GIVEN,
         seed: Optional[int] | NotGiven = NOT_GIVEN,
-        stop: Union[str, List[str], None] | NotGiven = NOT_GIVEN,
+        stop: Union[str, SequenceNotStr[str], None] | NotGiven = NOT_GIVEN,
         stream: Optional[bool] | NotGiven = NOT_GIVEN,
         stream_options: Optional[StreamOptionsParam] | NotGiven = NOT_GIVEN,
         suffix: Optional[str] | NotGiven = NOT_GIVEN,
@@ -557,10 +557,10 @@ class AsyncCompletionsResource(AsyncAPIResource):
         min_tokens: Optional[int] | NotGiven = NOT_GIVEN,
         n: Optional[int] | NotGiven = NOT_GIVEN,
         presence_penalty: Optional[float] | NotGiven = NOT_GIVEN,
-        prompt: Union[str, List[str], Iterable[int], Iterable[Iterable[int]]] | NotGiven = NOT_GIVEN,
+        prompt: Union[str, SequenceNotStr[str], Iterable[int], Iterable[Iterable[int]]] | NotGiven = NOT_GIVEN,
         return_raw_tokens: Optional[bool] | NotGiven = NOT_GIVEN,
         seed: Optional[int] | NotGiven = NOT_GIVEN,
-        stop: Union[str, List[str], None] | NotGiven = NOT_GIVEN,
+        stop: Union[str, SequenceNotStr[str], None] | NotGiven = NOT_GIVEN,
         stream: Optional[bool] | NotGiven = NOT_GIVEN,
         stream_options: Optional[StreamOptionsParam] | NotGiven = NOT_GIVEN,
         suffix: Optional[str] | NotGiven = NOT_GIVEN,
@@ -686,10 +686,10 @@ class AsyncCompletionsResource(AsyncAPIResource):
         min_tokens: Optional[int] | NotGiven = NOT_GIVEN,
         n: Optional[int] | NotGiven = NOT_GIVEN,
         presence_penalty: Optional[float] | NotGiven = NOT_GIVEN,
-        prompt: Union[str, List[str], Iterable[int], Iterable[Iterable[int]]] | NotGiven = NOT_GIVEN,
+        prompt: Union[str, SequenceNotStr[str], Iterable[int], Iterable[Iterable[int]]] | NotGiven = NOT_GIVEN,
         return_raw_tokens: Optional[bool] | NotGiven = NOT_GIVEN,
         seed: Optional[int] | NotGiven = NOT_GIVEN,
-        stop: Union[str, List[str], None] | NotGiven = NOT_GIVEN,
+        stop: Union[str, SequenceNotStr[str], None] | NotGiven = NOT_GIVEN,
         stream: Optional[bool] | NotGiven = NOT_GIVEN,
         stream_options: Optional[StreamOptionsParam] | NotGiven = NOT_GIVEN,
         suffix: Optional[str] | NotGiven = NOT_GIVEN,

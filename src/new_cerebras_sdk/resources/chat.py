@@ -2,13 +2,13 @@
 
 from __future__ import annotations
 
-from typing import Any, List, Union, Iterable, Optional, cast
+from typing import Any, Union, Iterable, Optional, cast
 from typing_extensions import Literal, overload
 
 import httpx
 
 from ..types import chat_create_completion_params
-from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven
+from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven, SequenceNotStr
 from .._utils import is_given, required_args, maybe_transform, strip_not_given, async_maybe_transform
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
@@ -72,7 +72,7 @@ class ChatResource(SyncAPIResource):
         | NotGiven = NOT_GIVEN,
         seed: Optional[int] | NotGiven = NOT_GIVEN,
         service_tier: Optional[Literal["auto", "default"]] | NotGiven = NOT_GIVEN,
-        stop: Union[str, List[str], None] | NotGiven = NOT_GIVEN,
+        stop: Union[str, SequenceNotStr[str], None] | NotGiven = NOT_GIVEN,
         stream: Optional[bool] | NotGiven = NOT_GIVEN,
         stream_options: Optional[StreamOptionsParam] | NotGiven = NOT_GIVEN,
         temperature: Optional[float] | NotGiven = NOT_GIVEN,
@@ -211,7 +211,7 @@ class ChatResource(SyncAPIResource):
         | NotGiven = NOT_GIVEN,
         seed: Optional[int] | NotGiven = NOT_GIVEN,
         service_tier: Optional[Literal["auto", "default"]] | NotGiven = NOT_GIVEN,
-        stop: Union[str, List[str], None] | NotGiven = NOT_GIVEN,
+        stop: Union[str, SequenceNotStr[str], None] | NotGiven = NOT_GIVEN,
         stream: Optional[bool] | NotGiven = NOT_GIVEN,
         stream_options: Optional[StreamOptionsParam] | NotGiven = NOT_GIVEN,
         temperature: Optional[float] | NotGiven = NOT_GIVEN,
@@ -347,7 +347,7 @@ class ChatResource(SyncAPIResource):
         | NotGiven = NOT_GIVEN,
         seed: Optional[int] | NotGiven = NOT_GIVEN,
         service_tier: Optional[Literal["auto", "default"]] | NotGiven = NOT_GIVEN,
-        stop: Union[str, List[str], None] | NotGiven = NOT_GIVEN,
+        stop: Union[str, SequenceNotStr[str], None] | NotGiven = NOT_GIVEN,
         stream: Optional[bool] | NotGiven = NOT_GIVEN,
         stream_options: Optional[StreamOptionsParam] | NotGiven = NOT_GIVEN,
         temperature: Optional[float] | NotGiven = NOT_GIVEN,
@@ -469,7 +469,7 @@ class AsyncChatResource(AsyncAPIResource):
         | NotGiven = NOT_GIVEN,
         seed: Optional[int] | NotGiven = NOT_GIVEN,
         service_tier: Optional[Literal["auto", "default"]] | NotGiven = NOT_GIVEN,
-        stop: Union[str, List[str], None] | NotGiven = NOT_GIVEN,
+        stop: Union[str, SequenceNotStr[str], None] | NotGiven = NOT_GIVEN,
         stream: Optional[bool] | NotGiven = NOT_GIVEN,
         stream_options: Optional[StreamOptionsParam] | NotGiven = NOT_GIVEN,
         temperature: Optional[float] | NotGiven = NOT_GIVEN,
@@ -608,7 +608,7 @@ class AsyncChatResource(AsyncAPIResource):
         | NotGiven = NOT_GIVEN,
         seed: Optional[int] | NotGiven = NOT_GIVEN,
         service_tier: Optional[Literal["auto", "default"]] | NotGiven = NOT_GIVEN,
-        stop: Union[str, List[str], None] | NotGiven = NOT_GIVEN,
+        stop: Union[str, SequenceNotStr[str], None] | NotGiven = NOT_GIVEN,
         stream: Optional[bool] | NotGiven = NOT_GIVEN,
         stream_options: Optional[StreamOptionsParam] | NotGiven = NOT_GIVEN,
         temperature: Optional[float] | NotGiven = NOT_GIVEN,
@@ -744,7 +744,7 @@ class AsyncChatResource(AsyncAPIResource):
         | NotGiven = NOT_GIVEN,
         seed: Optional[int] | NotGiven = NOT_GIVEN,
         service_tier: Optional[Literal["auto", "default"]] | NotGiven = NOT_GIVEN,
-        stop: Union[str, List[str], None] | NotGiven = NOT_GIVEN,
+        stop: Union[str, SequenceNotStr[str], None] | NotGiven = NOT_GIVEN,
         stream: Optional[bool] | NotGiven = NOT_GIVEN,
         stream_options: Optional[StreamOptionsParam] | NotGiven = NOT_GIVEN,
         temperature: Optional[float] | NotGiven = NOT_GIVEN,
