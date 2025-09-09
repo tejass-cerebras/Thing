@@ -344,6 +344,9 @@ class ChatResource(SyncAPIResource):
         response_format: Optional[
             chat_create_completion_params.CerebrasChatCompletionsExtraBodyCerebrasChatCompletionRequestResponseFormat
         ]
+        | Optional[
+            chat_create_completion_params.LlamaChatCompletionsExtraBodyCerebrasChatCompletionRequestResponseFormat
+        ]
         | NotGiven = NOT_GIVEN,
         seed: Optional[int] | NotGiven = NOT_GIVEN,
         service_tier: Optional[Literal["auto", "default"]] | NotGiven = NOT_GIVEN,
@@ -354,6 +357,7 @@ class ChatResource(SyncAPIResource):
         tool_choice: Optional[
             chat_create_completion_params.CerebrasChatCompletionsExtraBodyCerebrasChatCompletionRequestToolChoice
         ]
+        | Optional[chat_create_completion_params.LlamaChatCompletionsExtraBodyCerebrasChatCompletionRequestToolChoice]
         | NotGiven = NOT_GIVEN,
         tools: Optional[Iterable[ToolParam]] | NotGiven = NOT_GIVEN,
         top_logprobs: Optional[int] | NotGiven = NOT_GIVEN,
@@ -741,6 +745,9 @@ class AsyncChatResource(AsyncAPIResource):
         response_format: Optional[
             chat_create_completion_params.CerebrasChatCompletionsExtraBodyCerebrasChatCompletionRequestResponseFormat
         ]
+        | Optional[
+            chat_create_completion_params.LlamaChatCompletionsExtraBodyCerebrasChatCompletionRequestResponseFormat
+        ]
         | NotGiven = NOT_GIVEN,
         seed: Optional[int] | NotGiven = NOT_GIVEN,
         service_tier: Optional[Literal["auto", "default"]] | NotGiven = NOT_GIVEN,
@@ -751,6 +758,7 @@ class AsyncChatResource(AsyncAPIResource):
         tool_choice: Optional[
             chat_create_completion_params.CerebrasChatCompletionsExtraBodyCerebrasChatCompletionRequestToolChoice
         ]
+        | Optional[chat_create_completion_params.LlamaChatCompletionsExtraBodyCerebrasChatCompletionRequestToolChoice]
         | NotGiven = NOT_GIVEN,
         tools: Optional[Iterable[ToolParam]] | NotGiven = NOT_GIVEN,
         top_logprobs: Optional[int] | NotGiven = NOT_GIVEN,
