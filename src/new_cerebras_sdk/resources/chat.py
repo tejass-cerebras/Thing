@@ -8,7 +8,7 @@ from typing_extensions import Literal, overload
 import httpx
 
 from ..types import chat_create_completion_params
-from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven, SequenceNotStr
+from .._types import Body, Omit, Query, Headers, NotGiven, SequenceNotStr, omit, not_given
 from .._utils import is_given, required_args, maybe_transform, strip_not_given, async_maybe_transform
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
@@ -51,48 +51,48 @@ class ChatResource(SyncAPIResource):
         self,
         *,
         model: str,
-        api_extra_body: Optional[object] | NotGiven = NOT_GIVEN,
-        frequency_penalty: Optional[float] | NotGiven = NOT_GIVEN,
-        logit_bias: Optional[object] | NotGiven = NOT_GIVEN,
-        logprobs: Optional[bool] | NotGiven = NOT_GIVEN,
-        max_completion_tokens: Optional[int] | NotGiven = NOT_GIVEN,
-        max_tokens: Optional[int] | NotGiven = NOT_GIVEN,
+        api_extra_body: Optional[object] | Omit = omit,
+        frequency_penalty: Optional[float] | Omit = omit,
+        logit_bias: Optional[object] | Omit = omit,
+        logprobs: Optional[bool] | Omit = omit,
+        max_completion_tokens: Optional[int] | Omit = omit,
+        max_tokens: Optional[int] | Omit = omit,
         messages: Optional[
             Iterable[chat_create_completion_params.CerebrasChatCompletionsExtraBodyCerebrasChatCompletionRequestMessage]
         ]
-        | NotGiven = NOT_GIVEN,
-        min_completion_tokens: Optional[int] | NotGiven = NOT_GIVEN,
-        min_tokens: Optional[int] | NotGiven = NOT_GIVEN,
-        n: Optional[int] | NotGiven = NOT_GIVEN,
-        parallel_tool_calls: Optional[bool] | NotGiven = NOT_GIVEN,
-        presence_penalty: Optional[float] | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        min_completion_tokens: Optional[int] | Omit = omit,
+        min_tokens: Optional[int] | Omit = omit,
+        n: Optional[int] | Omit = omit,
+        parallel_tool_calls: Optional[bool] | Omit = omit,
+        presence_penalty: Optional[float] | Omit = omit,
         response_format: Optional[
             chat_create_completion_params.CerebrasChatCompletionsExtraBodyCerebrasChatCompletionRequestResponseFormat
         ]
-        | NotGiven = NOT_GIVEN,
-        seed: Optional[int] | NotGiven = NOT_GIVEN,
-        service_tier: Optional[Literal["auto", "default"]] | NotGiven = NOT_GIVEN,
-        stop: Union[str, SequenceNotStr[str], None] | NotGiven = NOT_GIVEN,
-        stream: Optional[bool] | NotGiven = NOT_GIVEN,
-        stream_options: Optional[StreamOptionsParam] | NotGiven = NOT_GIVEN,
-        temperature: Optional[float] | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        seed: Optional[int] | Omit = omit,
+        service_tier: Optional[Literal["auto", "default"]] | Omit = omit,
+        stop: Union[str, SequenceNotStr[str], None] | Omit = omit,
+        stream: Optional[bool] | Omit = omit,
+        stream_options: Optional[StreamOptionsParam] | Omit = omit,
+        temperature: Optional[float] | Omit = omit,
         tool_choice: Optional[
             chat_create_completion_params.CerebrasChatCompletionsExtraBodyCerebrasChatCompletionRequestToolChoice
         ]
-        | NotGiven = NOT_GIVEN,
-        tools: Optional[Iterable[ToolParam]] | NotGiven = NOT_GIVEN,
-        top_logprobs: Optional[int] | NotGiven = NOT_GIVEN,
-        top_p: Optional[float] | NotGiven = NOT_GIVEN,
-        user: Optional[str] | NotGiven = NOT_GIVEN,
-        cf_ray: str | NotGiven = NOT_GIVEN,
-        x_amz_cf_id: str | NotGiven = NOT_GIVEN,
-        x_delay_time: float | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        tools: Optional[Iterable[ToolParam]] | Omit = omit,
+        top_logprobs: Optional[int] | Omit = omit,
+        top_p: Optional[float] | Omit = omit,
+        user: Optional[str] | Omit = omit,
+        cf_ray: str | Omit = omit,
+        x_amz_cf_id: str | Omit = omit,
+        x_delay_time: float | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ChatCreateCompletionResponse:
         """
         Chat
@@ -190,48 +190,48 @@ class ChatResource(SyncAPIResource):
         api_extra_body: Optional[
             chat_create_completion_params.LlamaChatCompletionsExtraBodyCerebrasChatCompletionRequestExtraBody
         ]
-        | NotGiven = NOT_GIVEN,
-        frequency_penalty: Optional[float] | NotGiven = NOT_GIVEN,
-        logit_bias: Optional[object] | NotGiven = NOT_GIVEN,
-        logprobs: Optional[bool] | NotGiven = NOT_GIVEN,
-        max_completion_tokens: Optional[int] | NotGiven = NOT_GIVEN,
-        max_tokens: Optional[int] | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        frequency_penalty: Optional[float] | Omit = omit,
+        logit_bias: Optional[object] | Omit = omit,
+        logprobs: Optional[bool] | Omit = omit,
+        max_completion_tokens: Optional[int] | Omit = omit,
+        max_tokens: Optional[int] | Omit = omit,
         messages: Optional[
             Iterable[chat_create_completion_params.LlamaChatCompletionsExtraBodyCerebrasChatCompletionRequestMessage]
         ]
-        | NotGiven = NOT_GIVEN,
-        min_completion_tokens: Optional[int] | NotGiven = NOT_GIVEN,
-        min_tokens: Optional[int] | NotGiven = NOT_GIVEN,
-        n: Optional[int] | NotGiven = NOT_GIVEN,
-        parallel_tool_calls: Optional[bool] | NotGiven = NOT_GIVEN,
-        presence_penalty: Optional[float] | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        min_completion_tokens: Optional[int] | Omit = omit,
+        min_tokens: Optional[int] | Omit = omit,
+        n: Optional[int] | Omit = omit,
+        parallel_tool_calls: Optional[bool] | Omit = omit,
+        presence_penalty: Optional[float] | Omit = omit,
         response_format: Optional[
             chat_create_completion_params.LlamaChatCompletionsExtraBodyCerebrasChatCompletionRequestResponseFormat
         ]
-        | NotGiven = NOT_GIVEN,
-        seed: Optional[int] | NotGiven = NOT_GIVEN,
-        service_tier: Optional[Literal["auto", "default"]] | NotGiven = NOT_GIVEN,
-        stop: Union[str, SequenceNotStr[str], None] | NotGiven = NOT_GIVEN,
-        stream: Optional[bool] | NotGiven = NOT_GIVEN,
-        stream_options: Optional[StreamOptionsParam] | NotGiven = NOT_GIVEN,
-        temperature: Optional[float] | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        seed: Optional[int] | Omit = omit,
+        service_tier: Optional[Literal["auto", "default"]] | Omit = omit,
+        stop: Union[str, SequenceNotStr[str], None] | Omit = omit,
+        stream: Optional[bool] | Omit = omit,
+        stream_options: Optional[StreamOptionsParam] | Omit = omit,
+        temperature: Optional[float] | Omit = omit,
         tool_choice: Optional[
             chat_create_completion_params.LlamaChatCompletionsExtraBodyCerebrasChatCompletionRequestToolChoice
         ]
-        | NotGiven = NOT_GIVEN,
-        tools: Optional[Iterable[ToolParam]] | NotGiven = NOT_GIVEN,
-        top_logprobs: Optional[int] | NotGiven = NOT_GIVEN,
-        top_p: Optional[float] | NotGiven = NOT_GIVEN,
-        user: Optional[str] | NotGiven = NOT_GIVEN,
-        cf_ray: str | NotGiven = NOT_GIVEN,
-        x_amz_cf_id: str | NotGiven = NOT_GIVEN,
-        x_delay_time: float | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        tools: Optional[Iterable[ToolParam]] | Omit = omit,
+        top_logprobs: Optional[int] | Omit = omit,
+        top_p: Optional[float] | Omit = omit,
+        user: Optional[str] | Omit = omit,
+        cf_ray: str | Omit = omit,
+        x_amz_cf_id: str | Omit = omit,
+        x_delay_time: float | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ChatCreateCompletionResponse:
         """
         Chat
@@ -326,59 +326,59 @@ class ChatResource(SyncAPIResource):
         model: str,
         api_extra_body: Optional[object]
         | Optional[chat_create_completion_params.LlamaChatCompletionsExtraBodyCerebrasChatCompletionRequestExtraBody]
-        | NotGiven = NOT_GIVEN,
-        frequency_penalty: Optional[float] | NotGiven = NOT_GIVEN,
-        logit_bias: Optional[object] | NotGiven = NOT_GIVEN,
-        logprobs: Optional[bool] | NotGiven = NOT_GIVEN,
-        max_completion_tokens: Optional[int] | NotGiven = NOT_GIVEN,
-        max_tokens: Optional[int] | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        frequency_penalty: Optional[float] | Omit = omit,
+        logit_bias: Optional[object] | Omit = omit,
+        logprobs: Optional[bool] | Omit = omit,
+        max_completion_tokens: Optional[int] | Omit = omit,
+        max_tokens: Optional[int] | Omit = omit,
         messages: Optional[
             Iterable[chat_create_completion_params.CerebrasChatCompletionsExtraBodyCerebrasChatCompletionRequestMessage]
         ]
-        | NotGiven = NOT_GIVEN,
-        min_completion_tokens: Optional[int] | NotGiven = NOT_GIVEN,
-        min_tokens: Optional[int] | NotGiven = NOT_GIVEN,
-        n: Optional[int] | NotGiven = NOT_GIVEN,
-        parallel_tool_calls: Optional[bool] | NotGiven = NOT_GIVEN,
-        presence_penalty: Optional[float] | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        min_completion_tokens: Optional[int] | Omit = omit,
+        min_tokens: Optional[int] | Omit = omit,
+        n: Optional[int] | Omit = omit,
+        parallel_tool_calls: Optional[bool] | Omit = omit,
+        presence_penalty: Optional[float] | Omit = omit,
         response_format: Optional[
             chat_create_completion_params.CerebrasChatCompletionsExtraBodyCerebrasChatCompletionRequestResponseFormat
         ]
         | Optional[
             chat_create_completion_params.LlamaChatCompletionsExtraBodyCerebrasChatCompletionRequestResponseFormat
         ]
-        | NotGiven = NOT_GIVEN,
-        seed: Optional[int] | NotGiven = NOT_GIVEN,
-        service_tier: Optional[Literal["auto", "default"]] | NotGiven = NOT_GIVEN,
-        stop: Union[str, SequenceNotStr[str], None] | NotGiven = NOT_GIVEN,
-        stream: Optional[bool] | NotGiven = NOT_GIVEN,
-        stream_options: Optional[StreamOptionsParam] | NotGiven = NOT_GIVEN,
-        temperature: Optional[float] | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        seed: Optional[int] | Omit = omit,
+        service_tier: Optional[Literal["auto", "default"]] | Omit = omit,
+        stop: Union[str, SequenceNotStr[str], None] | Omit = omit,
+        stream: Optional[bool] | Omit = omit,
+        stream_options: Optional[StreamOptionsParam] | Omit = omit,
+        temperature: Optional[float] | Omit = omit,
         tool_choice: Optional[
             chat_create_completion_params.CerebrasChatCompletionsExtraBodyCerebrasChatCompletionRequestToolChoice
         ]
         | Optional[chat_create_completion_params.LlamaChatCompletionsExtraBodyCerebrasChatCompletionRequestToolChoice]
-        | NotGiven = NOT_GIVEN,
-        tools: Optional[Iterable[ToolParam]] | NotGiven = NOT_GIVEN,
-        top_logprobs: Optional[int] | NotGiven = NOT_GIVEN,
-        top_p: Optional[float] | NotGiven = NOT_GIVEN,
-        user: Optional[str] | NotGiven = NOT_GIVEN,
-        cf_ray: str | NotGiven = NOT_GIVEN,
-        x_amz_cf_id: str | NotGiven = NOT_GIVEN,
-        x_delay_time: float | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        tools: Optional[Iterable[ToolParam]] | Omit = omit,
+        top_logprobs: Optional[int] | Omit = omit,
+        top_p: Optional[float] | Omit = omit,
+        user: Optional[str] | Omit = omit,
+        cf_ray: str | Omit = omit,
+        x_amz_cf_id: str | Omit = omit,
+        x_delay_time: float | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ChatCreateCompletionResponse:
         extra_headers = {
             **strip_not_given(
                 {
                     "CF-RAY": cf_ray,
                     "X-Amz-Cf-Id": x_amz_cf_id,
-                    "X-delay-time": str(x_delay_time) if is_given(x_delay_time) else NOT_GIVEN,
+                    "X-delay-time": str(x_delay_time) if is_given(x_delay_time) else omit,
                 }
             ),
             **(extra_headers or {}),
@@ -452,48 +452,48 @@ class AsyncChatResource(AsyncAPIResource):
         self,
         *,
         model: str,
-        api_extra_body: Optional[object] | NotGiven = NOT_GIVEN,
-        frequency_penalty: Optional[float] | NotGiven = NOT_GIVEN,
-        logit_bias: Optional[object] | NotGiven = NOT_GIVEN,
-        logprobs: Optional[bool] | NotGiven = NOT_GIVEN,
-        max_completion_tokens: Optional[int] | NotGiven = NOT_GIVEN,
-        max_tokens: Optional[int] | NotGiven = NOT_GIVEN,
+        api_extra_body: Optional[object] | Omit = omit,
+        frequency_penalty: Optional[float] | Omit = omit,
+        logit_bias: Optional[object] | Omit = omit,
+        logprobs: Optional[bool] | Omit = omit,
+        max_completion_tokens: Optional[int] | Omit = omit,
+        max_tokens: Optional[int] | Omit = omit,
         messages: Optional[
             Iterable[chat_create_completion_params.CerebrasChatCompletionsExtraBodyCerebrasChatCompletionRequestMessage]
         ]
-        | NotGiven = NOT_GIVEN,
-        min_completion_tokens: Optional[int] | NotGiven = NOT_GIVEN,
-        min_tokens: Optional[int] | NotGiven = NOT_GIVEN,
-        n: Optional[int] | NotGiven = NOT_GIVEN,
-        parallel_tool_calls: Optional[bool] | NotGiven = NOT_GIVEN,
-        presence_penalty: Optional[float] | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        min_completion_tokens: Optional[int] | Omit = omit,
+        min_tokens: Optional[int] | Omit = omit,
+        n: Optional[int] | Omit = omit,
+        parallel_tool_calls: Optional[bool] | Omit = omit,
+        presence_penalty: Optional[float] | Omit = omit,
         response_format: Optional[
             chat_create_completion_params.CerebrasChatCompletionsExtraBodyCerebrasChatCompletionRequestResponseFormat
         ]
-        | NotGiven = NOT_GIVEN,
-        seed: Optional[int] | NotGiven = NOT_GIVEN,
-        service_tier: Optional[Literal["auto", "default"]] | NotGiven = NOT_GIVEN,
-        stop: Union[str, SequenceNotStr[str], None] | NotGiven = NOT_GIVEN,
-        stream: Optional[bool] | NotGiven = NOT_GIVEN,
-        stream_options: Optional[StreamOptionsParam] | NotGiven = NOT_GIVEN,
-        temperature: Optional[float] | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        seed: Optional[int] | Omit = omit,
+        service_tier: Optional[Literal["auto", "default"]] | Omit = omit,
+        stop: Union[str, SequenceNotStr[str], None] | Omit = omit,
+        stream: Optional[bool] | Omit = omit,
+        stream_options: Optional[StreamOptionsParam] | Omit = omit,
+        temperature: Optional[float] | Omit = omit,
         tool_choice: Optional[
             chat_create_completion_params.CerebrasChatCompletionsExtraBodyCerebrasChatCompletionRequestToolChoice
         ]
-        | NotGiven = NOT_GIVEN,
-        tools: Optional[Iterable[ToolParam]] | NotGiven = NOT_GIVEN,
-        top_logprobs: Optional[int] | NotGiven = NOT_GIVEN,
-        top_p: Optional[float] | NotGiven = NOT_GIVEN,
-        user: Optional[str] | NotGiven = NOT_GIVEN,
-        cf_ray: str | NotGiven = NOT_GIVEN,
-        x_amz_cf_id: str | NotGiven = NOT_GIVEN,
-        x_delay_time: float | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        tools: Optional[Iterable[ToolParam]] | Omit = omit,
+        top_logprobs: Optional[int] | Omit = omit,
+        top_p: Optional[float] | Omit = omit,
+        user: Optional[str] | Omit = omit,
+        cf_ray: str | Omit = omit,
+        x_amz_cf_id: str | Omit = omit,
+        x_delay_time: float | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ChatCreateCompletionResponse:
         """
         Chat
@@ -591,48 +591,48 @@ class AsyncChatResource(AsyncAPIResource):
         api_extra_body: Optional[
             chat_create_completion_params.LlamaChatCompletionsExtraBodyCerebrasChatCompletionRequestExtraBody
         ]
-        | NotGiven = NOT_GIVEN,
-        frequency_penalty: Optional[float] | NotGiven = NOT_GIVEN,
-        logit_bias: Optional[object] | NotGiven = NOT_GIVEN,
-        logprobs: Optional[bool] | NotGiven = NOT_GIVEN,
-        max_completion_tokens: Optional[int] | NotGiven = NOT_GIVEN,
-        max_tokens: Optional[int] | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        frequency_penalty: Optional[float] | Omit = omit,
+        logit_bias: Optional[object] | Omit = omit,
+        logprobs: Optional[bool] | Omit = omit,
+        max_completion_tokens: Optional[int] | Omit = omit,
+        max_tokens: Optional[int] | Omit = omit,
         messages: Optional[
             Iterable[chat_create_completion_params.LlamaChatCompletionsExtraBodyCerebrasChatCompletionRequestMessage]
         ]
-        | NotGiven = NOT_GIVEN,
-        min_completion_tokens: Optional[int] | NotGiven = NOT_GIVEN,
-        min_tokens: Optional[int] | NotGiven = NOT_GIVEN,
-        n: Optional[int] | NotGiven = NOT_GIVEN,
-        parallel_tool_calls: Optional[bool] | NotGiven = NOT_GIVEN,
-        presence_penalty: Optional[float] | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        min_completion_tokens: Optional[int] | Omit = omit,
+        min_tokens: Optional[int] | Omit = omit,
+        n: Optional[int] | Omit = omit,
+        parallel_tool_calls: Optional[bool] | Omit = omit,
+        presence_penalty: Optional[float] | Omit = omit,
         response_format: Optional[
             chat_create_completion_params.LlamaChatCompletionsExtraBodyCerebrasChatCompletionRequestResponseFormat
         ]
-        | NotGiven = NOT_GIVEN,
-        seed: Optional[int] | NotGiven = NOT_GIVEN,
-        service_tier: Optional[Literal["auto", "default"]] | NotGiven = NOT_GIVEN,
-        stop: Union[str, SequenceNotStr[str], None] | NotGiven = NOT_GIVEN,
-        stream: Optional[bool] | NotGiven = NOT_GIVEN,
-        stream_options: Optional[StreamOptionsParam] | NotGiven = NOT_GIVEN,
-        temperature: Optional[float] | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        seed: Optional[int] | Omit = omit,
+        service_tier: Optional[Literal["auto", "default"]] | Omit = omit,
+        stop: Union[str, SequenceNotStr[str], None] | Omit = omit,
+        stream: Optional[bool] | Omit = omit,
+        stream_options: Optional[StreamOptionsParam] | Omit = omit,
+        temperature: Optional[float] | Omit = omit,
         tool_choice: Optional[
             chat_create_completion_params.LlamaChatCompletionsExtraBodyCerebrasChatCompletionRequestToolChoice
         ]
-        | NotGiven = NOT_GIVEN,
-        tools: Optional[Iterable[ToolParam]] | NotGiven = NOT_GIVEN,
-        top_logprobs: Optional[int] | NotGiven = NOT_GIVEN,
-        top_p: Optional[float] | NotGiven = NOT_GIVEN,
-        user: Optional[str] | NotGiven = NOT_GIVEN,
-        cf_ray: str | NotGiven = NOT_GIVEN,
-        x_amz_cf_id: str | NotGiven = NOT_GIVEN,
-        x_delay_time: float | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        tools: Optional[Iterable[ToolParam]] | Omit = omit,
+        top_logprobs: Optional[int] | Omit = omit,
+        top_p: Optional[float] | Omit = omit,
+        user: Optional[str] | Omit = omit,
+        cf_ray: str | Omit = omit,
+        x_amz_cf_id: str | Omit = omit,
+        x_delay_time: float | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ChatCreateCompletionResponse:
         """
         Chat
@@ -727,59 +727,59 @@ class AsyncChatResource(AsyncAPIResource):
         model: str,
         api_extra_body: Optional[object]
         | Optional[chat_create_completion_params.LlamaChatCompletionsExtraBodyCerebrasChatCompletionRequestExtraBody]
-        | NotGiven = NOT_GIVEN,
-        frequency_penalty: Optional[float] | NotGiven = NOT_GIVEN,
-        logit_bias: Optional[object] | NotGiven = NOT_GIVEN,
-        logprobs: Optional[bool] | NotGiven = NOT_GIVEN,
-        max_completion_tokens: Optional[int] | NotGiven = NOT_GIVEN,
-        max_tokens: Optional[int] | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        frequency_penalty: Optional[float] | Omit = omit,
+        logit_bias: Optional[object] | Omit = omit,
+        logprobs: Optional[bool] | Omit = omit,
+        max_completion_tokens: Optional[int] | Omit = omit,
+        max_tokens: Optional[int] | Omit = omit,
         messages: Optional[
             Iterable[chat_create_completion_params.CerebrasChatCompletionsExtraBodyCerebrasChatCompletionRequestMessage]
         ]
-        | NotGiven = NOT_GIVEN,
-        min_completion_tokens: Optional[int] | NotGiven = NOT_GIVEN,
-        min_tokens: Optional[int] | NotGiven = NOT_GIVEN,
-        n: Optional[int] | NotGiven = NOT_GIVEN,
-        parallel_tool_calls: Optional[bool] | NotGiven = NOT_GIVEN,
-        presence_penalty: Optional[float] | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        min_completion_tokens: Optional[int] | Omit = omit,
+        min_tokens: Optional[int] | Omit = omit,
+        n: Optional[int] | Omit = omit,
+        parallel_tool_calls: Optional[bool] | Omit = omit,
+        presence_penalty: Optional[float] | Omit = omit,
         response_format: Optional[
             chat_create_completion_params.CerebrasChatCompletionsExtraBodyCerebrasChatCompletionRequestResponseFormat
         ]
         | Optional[
             chat_create_completion_params.LlamaChatCompletionsExtraBodyCerebrasChatCompletionRequestResponseFormat
         ]
-        | NotGiven = NOT_GIVEN,
-        seed: Optional[int] | NotGiven = NOT_GIVEN,
-        service_tier: Optional[Literal["auto", "default"]] | NotGiven = NOT_GIVEN,
-        stop: Union[str, SequenceNotStr[str], None] | NotGiven = NOT_GIVEN,
-        stream: Optional[bool] | NotGiven = NOT_GIVEN,
-        stream_options: Optional[StreamOptionsParam] | NotGiven = NOT_GIVEN,
-        temperature: Optional[float] | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        seed: Optional[int] | Omit = omit,
+        service_tier: Optional[Literal["auto", "default"]] | Omit = omit,
+        stop: Union[str, SequenceNotStr[str], None] | Omit = omit,
+        stream: Optional[bool] | Omit = omit,
+        stream_options: Optional[StreamOptionsParam] | Omit = omit,
+        temperature: Optional[float] | Omit = omit,
         tool_choice: Optional[
             chat_create_completion_params.CerebrasChatCompletionsExtraBodyCerebrasChatCompletionRequestToolChoice
         ]
         | Optional[chat_create_completion_params.LlamaChatCompletionsExtraBodyCerebrasChatCompletionRequestToolChoice]
-        | NotGiven = NOT_GIVEN,
-        tools: Optional[Iterable[ToolParam]] | NotGiven = NOT_GIVEN,
-        top_logprobs: Optional[int] | NotGiven = NOT_GIVEN,
-        top_p: Optional[float] | NotGiven = NOT_GIVEN,
-        user: Optional[str] | NotGiven = NOT_GIVEN,
-        cf_ray: str | NotGiven = NOT_GIVEN,
-        x_amz_cf_id: str | NotGiven = NOT_GIVEN,
-        x_delay_time: float | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        tools: Optional[Iterable[ToolParam]] | Omit = omit,
+        top_logprobs: Optional[int] | Omit = omit,
+        top_p: Optional[float] | Omit = omit,
+        user: Optional[str] | Omit = omit,
+        cf_ray: str | Omit = omit,
+        x_amz_cf_id: str | Omit = omit,
+        x_delay_time: float | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ChatCreateCompletionResponse:
         extra_headers = {
             **strip_not_given(
                 {
                     "CF-RAY": cf_ray,
                     "X-Amz-Cf-Id": x_amz_cf_id,
-                    "X-delay-time": str(x_delay_time) if is_given(x_delay_time) else NOT_GIVEN,
+                    "X-delay-time": str(x_delay_time) if is_given(x_delay_time) else omit,
                 }
             ),
             **(extra_headers or {}),
