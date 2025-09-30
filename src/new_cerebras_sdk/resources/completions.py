@@ -345,7 +345,7 @@ class CompletionsResource(SyncAPIResource):
                 {
                     "CF-RAY": cf_ray,
                     "X-Amz-Cf-Id": x_amz_cf_id,
-                    "X-delay-time": str(x_delay_time) if is_given(x_delay_time) else omit,
+                    "X-delay-time": str(x_delay_time) if is_given(x_delay_time) else not_given,
                 }
             ),
             **(extra_headers or {}),
@@ -711,7 +711,7 @@ class AsyncCompletionsResource(AsyncAPIResource):
                 {
                     "CF-RAY": cf_ray,
                     "X-Amz-Cf-Id": x_amz_cf_id,
-                    "X-delay-time": str(x_delay_time) if is_given(x_delay_time) else omit,
+                    "X-delay-time": str(x_delay_time) if is_given(x_delay_time) else not_given,
                 }
             ),
             **(extra_headers or {}),
