@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import httpx
 
-from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven
+from .._types import Body, Query, Headers, NotGiven, not_given
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
 from .._response import (
@@ -25,7 +25,7 @@ class TcpWarmingResource(SyncAPIResource):
         This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
-        For more information, see https://www.github.com/stainless-sdks/new-cerebras-sdk-python#accessing-raw-response-data-eg-headers
+        For more information, see https://www.github.com/tejass-cerebras/Thing#accessing-raw-response-data-eg-headers
         """
         return TcpWarmingResourceWithRawResponse(self)
 
@@ -34,7 +34,7 @@ class TcpWarmingResource(SyncAPIResource):
         """
         An alternative to `.with_raw_response` that doesn't eagerly read the response body.
 
-        For more information, see https://www.github.com/stainless-sdks/new-cerebras-sdk-python#with_streaming_response
+        For more information, see https://www.github.com/tejass-cerebras/Thing#with_streaming_response
         """
         return TcpWarmingResourceWithStreamingResponse(self)
 
@@ -46,7 +46,7 @@ class TcpWarmingResource(SyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> object:
         """Tcp Warming"""
         return self._get(
@@ -65,7 +65,7 @@ class AsyncTcpWarmingResource(AsyncAPIResource):
         This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
-        For more information, see https://www.github.com/stainless-sdks/new-cerebras-sdk-python#accessing-raw-response-data-eg-headers
+        For more information, see https://www.github.com/tejass-cerebras/Thing#accessing-raw-response-data-eg-headers
         """
         return AsyncTcpWarmingResourceWithRawResponse(self)
 
@@ -74,7 +74,7 @@ class AsyncTcpWarmingResource(AsyncAPIResource):
         """
         An alternative to `.with_raw_response` that doesn't eagerly read the response body.
 
-        For more information, see https://www.github.com/stainless-sdks/new-cerebras-sdk-python#with_streaming_response
+        For more information, see https://www.github.com/tejass-cerebras/Thing#with_streaming_response
         """
         return AsyncTcpWarmingResourceWithStreamingResponse(self)
 
@@ -86,7 +86,7 @@ class AsyncTcpWarmingResource(AsyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> object:
         """Tcp Warming"""
         return await self._get(

@@ -2,9 +2,10 @@
 
 from __future__ import annotations
 
-from typing import List, Union, Iterable, Optional
+from typing import Union, Iterable, Optional
 from typing_extensions import Required, Annotated, TypeAlias, TypedDict
 
+from .._types import SequenceNotStr
 from .._utils import PropertyInfo
 from .stream_options_param import StreamOptionsParam
 
@@ -96,7 +97,7 @@ class CerebrasCompletionsExtraBodyCerebrasCompletionRequest(TypedDict, total=Fal
     far, increasing the model's likelihood to talk about new topics.
     """
 
-    prompt: Union[str, List[str], Iterable[int], Iterable[Iterable[int]]]
+    prompt: Union[str, SequenceNotStr[str], Iterable[int], Iterable[Iterable[int]]]
     """
     The prompt(s) to generate completions for, encoded as a string, array of
     strings, array of tokens, or array of token arrays.
@@ -112,7 +113,7 @@ class CerebrasCompletionsExtraBodyCerebrasCompletionRequest(TypedDict, total=Fal
     the same result. Determinism is not guaranteed.
     """
 
-    stop: Union[str, List[str], None]
+    stop: Union[str, SequenceNotStr[str], None]
     """Up to 4 sequences where the API will stop generating further tokens.
 
     The returned text will not contain the stop sequence.
@@ -236,7 +237,7 @@ class LlamaCompletionsExtraBodyCerebrasCompletionRequest(TypedDict, total=False)
     far, increasing the model's likelihood to talk about new topics.
     """
 
-    prompt: Union[str, List[str], Iterable[int], Iterable[Iterable[int]]]
+    prompt: Union[str, SequenceNotStr[str], Iterable[int], Iterable[Iterable[int]]]
     """
     The prompt(s) to generate completions for, encoded as a string, array of
     strings, array of tokens, or array of token arrays.
@@ -252,7 +253,7 @@ class LlamaCompletionsExtraBodyCerebrasCompletionRequest(TypedDict, total=False)
     the same result. Determinism is not guaranteed.
     """
 
-    stop: Union[str, List[str], None]
+    stop: Union[str, SequenceNotStr[str], None]
     """Up to 4 sequences where the API will stop generating further tokens.
 
     The returned text will not contain the stop sequence.

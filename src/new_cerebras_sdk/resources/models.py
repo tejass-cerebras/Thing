@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import httpx
 
-from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven
+from .._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
 from .._utils import strip_not_given
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
@@ -28,7 +28,7 @@ class ModelsResource(SyncAPIResource):
         This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
-        For more information, see https://www.github.com/stainless-sdks/new-cerebras-sdk-python#accessing-raw-response-data-eg-headers
+        For more information, see https://www.github.com/tejass-cerebras/Thing#accessing-raw-response-data-eg-headers
         """
         return ModelsResourceWithRawResponse(self)
 
@@ -37,7 +37,7 @@ class ModelsResource(SyncAPIResource):
         """
         An alternative to `.with_raw_response` that doesn't eagerly read the response body.
 
-        For more information, see https://www.github.com/stainless-sdks/new-cerebras-sdk-python#with_streaming_response
+        For more information, see https://www.github.com/tejass-cerebras/Thing#with_streaming_response
         """
         return ModelsResourceWithStreamingResponse(self)
 
@@ -45,14 +45,14 @@ class ModelsResource(SyncAPIResource):
         self,
         model_id: str,
         *,
-        cf_ray: str | NotGiven = NOT_GIVEN,
-        x_amz_cf_id: str | NotGiven = NOT_GIVEN,
+        cf_ray: str | Omit = omit,
+        x_amz_cf_id: str | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ModelMetadata:
         """
         Get Model
@@ -88,14 +88,14 @@ class ModelsResource(SyncAPIResource):
     def list(
         self,
         *,
-        cf_ray: str | NotGiven = NOT_GIVEN,
-        x_amz_cf_id: str | NotGiven = NOT_GIVEN,
+        cf_ray: str | Omit = omit,
+        x_amz_cf_id: str | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ModelListResponse:
         """
         List Models
@@ -134,7 +134,7 @@ class AsyncModelsResource(AsyncAPIResource):
         This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
-        For more information, see https://www.github.com/stainless-sdks/new-cerebras-sdk-python#accessing-raw-response-data-eg-headers
+        For more information, see https://www.github.com/tejass-cerebras/Thing#accessing-raw-response-data-eg-headers
         """
         return AsyncModelsResourceWithRawResponse(self)
 
@@ -143,7 +143,7 @@ class AsyncModelsResource(AsyncAPIResource):
         """
         An alternative to `.with_raw_response` that doesn't eagerly read the response body.
 
-        For more information, see https://www.github.com/stainless-sdks/new-cerebras-sdk-python#with_streaming_response
+        For more information, see https://www.github.com/tejass-cerebras/Thing#with_streaming_response
         """
         return AsyncModelsResourceWithStreamingResponse(self)
 
@@ -151,14 +151,14 @@ class AsyncModelsResource(AsyncAPIResource):
         self,
         model_id: str,
         *,
-        cf_ray: str | NotGiven = NOT_GIVEN,
-        x_amz_cf_id: str | NotGiven = NOT_GIVEN,
+        cf_ray: str | Omit = omit,
+        x_amz_cf_id: str | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ModelMetadata:
         """
         Get Model
@@ -194,14 +194,14 @@ class AsyncModelsResource(AsyncAPIResource):
     async def list(
         self,
         *,
-        cf_ray: str | NotGiven = NOT_GIVEN,
-        x_amz_cf_id: str | NotGiven = NOT_GIVEN,
+        cf_ray: str | Omit = omit,
+        x_amz_cf_id: str | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ModelListResponse:
         """
         List Models

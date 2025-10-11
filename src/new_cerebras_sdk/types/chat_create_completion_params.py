@@ -2,9 +2,10 @@
 
 from __future__ import annotations
 
-from typing import List, Union, Iterable, Optional
+from typing import Union, Iterable, Optional
 from typing_extensions import Literal, Required, Annotated, TypeAlias, TypedDict
 
+from .._types import SequenceNotStr
 from .._utils import PropertyInfo
 from .tool_param import ToolParam
 from .choice_object_param import ChoiceObjectParam
@@ -123,7 +124,7 @@ class CerebrasChatCompletionsExtraBodyCerebrasChatCompletionRequest(TypedDict, t
 
     service_tier: Optional[Literal["auto", "default"]]
 
-    stop: Union[str, List[str], None]
+    stop: Union[str, SequenceNotStr[str], None]
     """Up to 4 sequences where the API will stop generating further tokens.
 
     The returned text will not contain the stop sequence.
@@ -278,7 +279,7 @@ class LlamaChatCompletionsExtraBodyCerebrasChatCompletionRequest(TypedDict, tota
 
     service_tier: Optional[Literal["auto", "default"]]
 
-    stop: Union[str, List[str], None]
+    stop: Union[str, SequenceNotStr[str], None]
     """Up to 4 sequences where the API will stop generating further tokens.
 
     The returned text will not contain the stop sequence.
